@@ -35,7 +35,6 @@ public static OIMClient oimClient = null;
 		
 		String prefix = "PDIT Server User";
 		
-			//String prefix = "APTest SIMRES ";
 			AccessPolicyResourceData data = new AccessPolicyResourceData(9, prefix ,18 ,"UD_PDIS_USR","P");
 			HashMap map = new HashMap();
 			long itResourceKey = 10l;
@@ -45,7 +44,6 @@ public static OIMClient oimClient = null;
 			System.out.println(data);
 			HashMap childFormData =new HashMap();
 			String childFormName = "UD_PDIS_ROL";
-			//String childFormName = "UD_SIMRESC1";
 			String hostPrefix = "adc2200";
 			String slchostPrefix = "slc00";
 			String suffix = ".us.oracle.com";
@@ -60,7 +58,7 @@ public static OIMClient oimClient = null;
 	            data.addChildTableRecord(String.valueOf(19l), childFormName, "Add", childFormData);        
 			}
 	       
-	      HashMap hm = new HashMap();
+	        HashMap hm = new HashMap();
 	    	hm.put("Access Policies.Name", prefix+"1000");
 	    	hm.put("Access Policies.Note", prefix + " NOTE");
 	    	hm.put("Access Policies.Description", prefix + " DESCRIPTION");
@@ -68,18 +66,8 @@ public static OIMClient oimClient = null;
 	    	hm.put("Access Policies.Retrofit Flag", "1");
 	    	hm.put("Access Policies.Priority", "1");
 
-			apIntf.createAccessPolicy(hm, new long[] {9},  new boolean[]{true},new long[0], null, new AccessPolicyResourceData[]{data});
-			//apIntf.cre
-			System.out.println("Successfully created policy "+hm.get("Access Policies.Name"));
-		
-		
-		
-		//long[] polKeys = new long[] {25,26,28,29};
-		
-		//apIntf.assignGroupToPolicies(40, polKeys);
-		
-		//System.out.println("Boolean "+ )
-		
+ 		apIntf.createAccessPolicy(hm, new long[] {9},  new boolean[]{true},new long[0], null, new AccessPolicyResourceData[]{data});
+		System.out.println("Successfully created policy "+hm.get("Access Policies.Name"));
 		//Update access policy
 		/*
 		AccessPolicyResourceData data1 = new AccessPolicyResourceData(4, "PDIT Server User", 8,"UD_PDIS_USR","P"); 
